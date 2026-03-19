@@ -79,8 +79,7 @@ class ApiConfig {
   // For now, this should match your Stripe publishable key from backend
   // You can get this from your Stripe dashboard or backend config
   static String get stripePublishableKey =>
-      dotenv.env['STRIPE_PUBLISHABLE_KEY'] ??
-      'pk_test_51O000000000000000000000';
+    "pk_test_51SODKJ30YQc6nJL4XocadTeOlNvSwrNwE2YHJa4Rs3iBV5o3J2MM7UzWwlBxQujixISwIUKtTqEcxdIwBi0deEK80027ZCf7ry";
 
   // Payment endpoints
   static const String depositEndpoint = '/payments/deposit';

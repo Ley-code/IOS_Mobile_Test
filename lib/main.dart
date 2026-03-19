@@ -49,7 +49,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: "assets/.env");
 
   // Make status bar transparent and icons light so the app can draw behind it.
   SystemChrome.setSystemUIOverlayStyle(
@@ -92,15 +92,12 @@ void main() async {
         ),
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
-        builder: (context, themeState) {
-          final mode = (themeState as ThemeLoaded).mode;
-
+        builder: (context, _) {
           return MaterialApp(
             theme: AppTheme.getThemeData(AppThemeMode.light),
             darkTheme: AppTheme.getThemeData(AppThemeMode.dark),
-            themeMode: mode == AppThemeMode.dark
-                ? ThemeMode.dark
-                : ThemeMode.light,
+            // Adaptive theme: follow the OS light/dark setting.
+            themeMode: ThemeMode.system,
             initialRoute: '/splash_page',
             onGenerateRoute: (settings) {
               if (settings.name == '/splash_page') {

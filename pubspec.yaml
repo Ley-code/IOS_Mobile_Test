@@ -57,6 +57,7 @@ dependencies:
   flutter_dotenv: ^5.1.0
   geolocator: ^13.0.0
   geocoding: ^3.0.0
+  adaptive_theme: ^3.7.2
 
 dev_dependencies:
   flutter_test:
@@ -85,7 +86,7 @@ flutter:
   assets:
     - assets/images/
     - assets/app_icon.png
-    - .env
+    - assets/.env
 
 # Configuration for flutter_launcher_icons. Once you add your source
 # icon file at `assets/app_icon.png` (recommended 1024x1024 PNG), run:
